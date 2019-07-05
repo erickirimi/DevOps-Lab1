@@ -9,7 +9,7 @@ COPY ["Lab.Client.Service.csproj", "Lab.Client.Service/"]
 RUN dotnet restore "Lab.Client.Service/Lab.Client.Service.csproj"
 COPY . .
 WORKDIR "/src/Lab.Client.Service"
-RUN dotnet build "Lab.Client.Service.csproj" -c Release -o /app
+RUN dotnet build "Lab.Client.Service/Lab.Client.Service.csproj" -c Release -o /app
 
 FROM build AS publish
 RUN dotnet publish "Lab.Client.Service.csproj" -c Release -o /app
